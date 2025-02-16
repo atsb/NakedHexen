@@ -13,6 +13,7 @@
 #ifndef __H2DEF__
 #define __H2DEF__
 
+#include <SDL2/SDL.h>
 #include "h2stdinc.h"
 
 /* if rangecheck is undefined, most parameter
@@ -148,6 +149,12 @@ extern	byte	*destview, *destscreen;	/* PC direct to screen pointers */
 #define	KEY_DOWNARROW		129
 #define	KEY_LEFTARROW		130
 #define	KEY_RIGHTARROW		131
+
+#define KEY_W        SDLK_w
+#define KEY_S        SDLK_s
+#define KEY_A_LOW    SDLK_a
+#define KEY_D        SDLK_d
+#define KEY_SPACEBAR SDLK_SPACE
 
 #define	KEY_ALT			132
 #define	KEY_LALT		KEY_ALT
@@ -300,8 +307,8 @@ typedef struct
 
 typedef struct
 {
-    signed char	forwardmove;	/* *2048 for move */
-    signed char	sidemove;	/* *2048 for move */
+    int	        forwardmove;	/* *2048 for move */
+    int	        sidemove;	/* *2048 for move */
     short		angleturn;	/* <<16 for angle delta */
     short		consistancy;	/* checks for net game */
     byte		chatchar;
